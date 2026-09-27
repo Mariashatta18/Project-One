@@ -24,8 +24,8 @@ while True:
             "grade": grade
         }
 
-             assignments.append(assignment)
-
+        assignments.append(assignment)
+        
         with open("assignments.json", "w") as file:
             json.dump(assignments, file)
 
@@ -44,3 +44,4 @@ while True:
 
     else:
         print("Please choose 1, 2, or 3.")
+
