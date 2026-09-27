@@ -1,8 +1,11 @@
 import json
 # Student Assignment and Grade Tracker
 
-assignments = []
-
+try:
+    with open("assignments.json", "r") as file:
+        assignments = json.load(file)
+except FileNotFoundError:
+    assignments = []
 print("Student Assignment and Grade Tracker")
 
 while True:
@@ -21,7 +24,11 @@ while True:
             "grade": grade
         }
 
-        assignments.append(assignment)
+             assignments.append(assignment)
+
+        with open("assignments.json", "w") as file:
+            json.dump(assignments, file)
+
         print("Assignment added.")
 
     elif choice == "2":
